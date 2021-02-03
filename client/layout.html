@@ -1,0 +1,24 @@
+<template name="mainLayout">
+  {{>head}}
+  <body>
+    <div class="wrapper">
+      {{>sidebar}}
+      <div class="main-panel">
+        {{>navbar}}
+        <div class="content">
+          <div class="container-fluid">
+            {{#if Template.subscriptionsReady}}
+              {{> Template.dynamic template=content}}
+              {{#if toggleDebug}}
+                <div style="margin-top: 75px;">
+                  {{> debugging}}
+                </div>
+              {{/if}}
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  {{>static_js}}
+</template>
